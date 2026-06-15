@@ -60,6 +60,15 @@ export default function Contact() {
     e.preventDefault();
     if (validateForm()) {
       console.log("Form Submitted:", formData);
+
+      // Trigger Google Ads conversion tracking event
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'contact_form_submit', {
+          'event_category': 'lead',
+          'event_label': 'Contact Form'
+        });
+      }
+
       setShowToast(true);
       // Clear form
       setFormData({
@@ -102,7 +111,19 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4>Location Address</h4>
-                    <p>Lalgudi Main Road, Lalgudi, Trichy, Tamil Nadu - 621601</p>
+                    <p>
+                      Lalgudi Main Road, Lalgudi, Trichy, Tamil Nadu - 621601
+                      <br />
+                      <a 
+                        href="https://www.google.com/maps/dir/?api=1&destination=Sri+Vasavi+Plywood+and+Hardware+Lalgudi"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="detail-link get-directions-link"
+                        style={{ display: 'inline-block', marginTop: '4px', textDecoration: 'underline', fontWeight: '500' }}
+                      >
+                        Get Directions
+                      </a>
+                    </p>
                   </div>
                 </div>
 

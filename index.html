@@ -29,6 +29,50 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-R1SQJLNDJZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-R1SQJLNDJZ');
+
+      // Global event tracking for links (Phone, WhatsApp, Email, Get Directions)
+      document.addEventListener('click', function(e) {
+        var target = e.target;
+        while (target && target.tagName !== 'A') {
+          target = target.parentElement;
+        }
+        if (!target) return;
+
+        var href = target.getAttribute('href') || '';
+        var isGetDirections = target.classList.contains('get-directions-link') || href.indexOf('google.com/maps/dir') !== -1;
+
+        if (href.indexOf('tel:') === 0) {
+          gtag('event', 'click_to_call', {
+            'event_category': 'contact',
+            'event_label': 'Phone Call Button'
+          });
+        } else if (href.indexOf('wa.me') !== -1 || href.indexOf('api.whatsapp.com') !== -1) {
+          gtag('event', 'click_to_whatsapp', {
+            'event_category': 'contact',
+            'event_label': 'WhatsApp Chat'
+          });
+        } else if (href.indexOf('mailto:') === 0) {
+          gtag('event', 'click_to_email', {
+            'event_category': 'contact',
+            'event_label': 'Email Link'
+          });
+        } else if (isGetDirections) {
+          gtag('event', 'get_directions', {
+            'event_category': 'engagement',
+            'event_label': 'Google Maps Directions'
+          });
+        }
+      });
+    </script>
   </head>
   <body>
     <div id="root"></div>

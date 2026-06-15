@@ -35,6 +35,8 @@
   }
 }
 
+
+
 /* Products Content Section */
 .products-section {
   background-color: var(--primary-bg);
@@ -162,7 +164,12 @@
   line-height: 1.6;
   color: var(--body-text);
   margin-bottom: 20px;
-  flex-grow: 1; /* Pushes features and footer to bottom */
+  height: 68px; /* Fixed height for exactly 3 lines of text */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Features checklist */

@@ -6,6 +6,8 @@ import './Home.css';
 export default function Home() {
   // FAQ accordion state
   const [activeFaq, setActiveFaq] = useState(null);
+  
+
 
   const toggleFaq = (index) => {
     if (activeFaq === index) {
@@ -40,36 +42,23 @@ export default function Home() {
 
   const chooseUsData = [
     {
-      icon: <Shield size={32} />,
-      title: "Best Quality Materials",
-      desc: "Direct source for premium-grade water-resistant plywood, standard laminates, and long-lasting kitchen fixtures."
+      icon: <Award size={32} />,
+      title: "28+ Years of Trust",
+      desc: "Serving homeowners, carpenters, and builders with premium plywood and interior materials for over 28 years."
     },
     {
-      icon: <DollarSign size={32} />,
-      title: "Affordable Pricing",
-      desc: "Competitive pricing structure for wholesale builders and individual home projects alike, with no middleman markup."
+      icon: <Shield size={32} />,
+      title: "Genuine Premium Brands",
+      desc: "Authorized dealer for Greenply, CenturyPly, Merino, Hafele, Hettich, and other trusted brands."
     },
     {
       icon: <Truck size={32} />,
-      title: "Fast Delivery",
-      desc: "Our active logistics network ensures all wood products and hardware materials reach your project site on time."
-    },
-    {
-      icon: <Award size={32} />,
-      title: "Trusted Brands Only",
-      desc: "Authorized partner with major industry giants like CenturyPly, Greenply, Hafele, and Hettich to guarantee quality."
-    },
-    {
-      icon: <Headphones size={32} />,
-      title: "Expert Design Support",
-      desc: "Consult with our in-house consultants to pick the exact laminates, door styles, and modular accessories for your layout."
+      title: "Fast Delivery & Expert Support",
+      desc: "Quick delivery, honest pricing, and expert guidance to help customers choose the right materials."
     }
   ];
 
-  const brandLogos = [
-    "CenturyPly", "Greenply", "Kitply", "Merino", "Fevicol", "Hafele", "Ebco", "Hettich",
-    "CenturyPly", "Greenply", "Kitply", "Merino", "Fevicol", "Hafele", "Ebco", "Hettich" // Repeated for infinite scroll
-  ];
+
 
   const testimonials = [
     {
@@ -96,7 +85,7 @@ export default function Home() {
     <div className="home-page animate-fade-in-up">
       
       {/* 1. Hero Section */}
-      <section className="hero-section" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/hero_bg.png')" }}>
+      <section className="hero-section" style={{ backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('/showroom_bg.jpg')" }}>
         <div className="container hero-container">
           <div className="hero-content">
             
@@ -149,8 +138,8 @@ export default function Home() {
       <section className="section why-choose-us-section">
         <div className="container">
           <div className="section-header">
-            <h2>Why Choose Us</h2>
-            <p>We deliver unbeatable value through premium materials and expert advice.</p>
+            <h2>Why Choose Sri Vasavi</h2>
+            <p>Trusted by homeowners, carpenters, and builders for premium interior materials.</p>
           </div>
           <div className="choose-us-grid">
             {chooseUsData.map((item, idx) => (
@@ -165,70 +154,95 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* 3. Featured Brands Section */}
-      <section className="brands-section">
-        <div className="container">
-          <div className="section-header">
-            <h2>Premium Brands We Deal In</h2>
-            <p>We distribute authentic wooden components and hardware from industry-leading builders.</p>
-          </div>
-        </div>
-        
-        {/* Infinite Scrolling Logo Carousel */}
-        <div className="logo-carousel-container">
-          <div className="logo-carousel-track">
-            {brandLogos.map((brand, idx) => (
-              <div className="logo-slide" key={idx}>
-                <div className="brand-logo-card">
-                  <span className="brand-logo-text">{brand}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Showroom Reel Section */}
+      {/* Showroom & Product Video Showcase Section */}
       <section className="section video-section">
         <div className="container">
           <div className="section-header">
-            <h2>Explore Our Showroom</h2>
-            <p>Take a virtual tour of our Trichy store and watch our premium custom woodworks and hardware selections in action.</p>
+            <h2>Explore Our Showroom &amp; Products</h2>
+            <p>Take a virtual tour of our Trichy store and watch real product demonstrations in action.</p>
           </div>
 
-          <div className="video-reel-container">
-            <div className="video-reel-card">
-              <iframe
-                src="https://www.instagram.com/reel/DV4HP_ykp3w/embed"
-                width="100%"
-                height="650"
-                style={{ border: 'none', overflow: 'hidden', borderRadius: '24px' }}
-                scrolling="no"
-                allowtransparency="true"
-                allowFullScreen={true}
-              ></iframe>
-            </div>
+          <div className="video-reel-three-grid">
             
-            <div className="video-reel-info">
-              <h3 className="video-reel-title">Quality Timber &amp; Modern Designs</h3>
-              <p className="video-reel-desc">
-                From luxury wardrobe laminates to heavy-duty modular kitchen cabinets, watch how we craft premium designs. Visit us in Lalgudi, Trichy to explore our collections live.
-              </p>
-              <div className="video-reel-stats">
-                <div className="v-stat">
-                  <span className="v-stat-num">28+</span>
-                  <span className="v-stat-label">Years Legacy</span>
-                </div>
-                <div className="v-stat">
-                  <span className="v-stat-num">100%</span>
-                  <span className="v-stat-label">Authentic Brands</span>
-                </div>
+            {/* Card 1: Showroom Tour (Instagram Reel) */}
+            <div className="video-grid-card">
+              <div className="video-card-title-bar">
+                <h3>Store Showroom Tour</h3>
               </div>
-              <Link to="/contact" className="btn btn-primary video-cta-btn">
-                <span>Plan Your Visit</span>
-              </Link>
+              <div className="video-iframe-wrapper instagram-iframe-wrapper">
+                <iframe
+                  src="https://www.instagram.com/reel/DV4HP_ykp3w/embed"
+                  title="Store Showroom Tour"
+                  style={{ border: 'none' }}
+                  scrolling="no"
+                  allowtransparency="true"
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+              <div className="video-card-footer">
+                <Link to="/products" className="btn btn-secondary video-card-cta">
+                  <span>Explore Interior</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
             </div>
+
+            {/* Card 2: PVC Doors (YouTube Short) */}
+            <div className="video-grid-card">
+              <div className="video-card-title-bar">
+                <h3>PVC Doors Demonstration</h3>
+              </div>
+              <div className="video-iframe-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/dJSOHkah0XI"
+                  title="PVC Doors Showcase"
+                  style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-card-footer">
+                <Link to="/products/pvc-doors" className="btn btn-secondary video-card-cta">
+                  <span>View PVC Doors</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Card 3: Wooden Doors (YouTube Short) */}
+            <div className="video-grid-card">
+              <div className="video-card-title-bar">
+                <h3>Wooden Doors Showcase</h3>
+              </div>
+              <div className="video-iframe-wrapper">
+                <iframe
+                  src="https://www.youtube.com/embed/iA0ZcVNmB9Y"
+                  title="Premium Wooden Doors Showcase"
+                  style={{ border: 'none' }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+              <div className="video-card-footer">
+                <Link to="/products/wooden-doors" className="btn btn-secondary video-card-cta">
+                  <span>View Wooden Doors</span>
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="showroom-bottom-actions">
+            <a 
+              href="https://wa.me/919003848037" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn showcase-whatsapp-btn"
+            >
+              <MessageSquare size={18} />
+              <span>Chat on WhatsApp</span>
+            </a>
           </div>
         </div>
       </section>

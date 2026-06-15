@@ -66,7 +66,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link to="/products">PVC Doors</Link></li>
               <li><Link to="/products">Modular Kitchen Accessories</Link></li>
-              <li><Link to="/products">Teak Wood Furniture</Link></li>
+              <li><Link to="/products">Premium Wooden Doors</Link></li>
               <li><Link to="/products">Handmade Wooden Stands</Link></li>
               <li><Link to="/products">Mosquito Net Solutions</Link></li>
               <li><Link to="/products">Interior Hardware</Link></li>
@@ -79,7 +79,19 @@ export default function Footer() {
             <ul className="footer-contact-list">
               <li>
                 <MapPin size={18} className="footer-icon" />
-                <span>Lalgudi Main Road, Trichy, Tamil Nadu - 621601</span>
+                <span>
+                  Lalgudi Main Road, Trichy, Tamil Nadu - 621601
+                  <br />
+                  <a 
+                    href="https://www.google.com/maps/dir/?api=1&destination=Sri+Vasavi+Plywood+and+Hardware+Lalgudi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="get-directions-link"
+                    style={{ display: 'inline-block', fontSize: '0.85rem', color: 'var(--primary-light, #e0f2fe)', textDecoration: 'underline', marginTop: '4px', opacity: 0.9 }}
+                  >
+                    Get Directions
+                  </a>
+                </span>
               </li>
               <li>
                 <Phone size={18} className="footer-icon" />
