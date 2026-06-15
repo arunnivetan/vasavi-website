@@ -3,6 +3,7 @@ import { HashRouter as Router, Routes, Route, Navigate, useLocation } from 'reac
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import FloatingDirections from './components/FloatingDirections';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import About from './pages/About';
@@ -40,6 +41,7 @@ export default function App() {
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <FloatingDirections />
       </div>
     </Router>
   );
