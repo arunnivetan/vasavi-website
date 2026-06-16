@@ -22,10 +22,29 @@ function ScrollToTop() {
   return null;
 }
 
+// Track Meta Pixel page views on route changes
+function FacebookPixelTracker() {
+  const { pathname } = useLocation();
+  const isFirstRender = React.useRef(true);
+
+  React.useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+    if (window.fbq) {
+      window.fbq('track', 'PageView');
+    }
+  }, [pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <Router>
       <ScrollToTop />
+      <FacebookPixelTracker />
       <div className="app-layout">
         <Navbar />
         <main className="main-content">
